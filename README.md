@@ -1,3 +1,4 @@
+
 - [Overview of project](#overview)
 - [Project Aim](#project-structure)
 - [Project structure](#project-structure)
@@ -6,6 +7,8 @@
 - [Future Enhancements](#future-enhancements)
 - [License information](#license)
 
+
+![Architecture Diagram](https://github.com/Umar-hamid-786/pinterest-data-pipeline549/blob/master/project_overview.png?raw=true)
 
 
 ## Overview of Project
