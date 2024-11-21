@@ -24,17 +24,45 @@ Data Ingestion:
 
 Provisioned an API Gateway RESTful API to leverage a Kafka REST proxy.
 Data was sent to 3 different Kafka topics on AWS MSK (Managed Streaming for Apache Kafka).
+
 Batch Processing:
 
 Batch data was distributed from MSK to an AWS S3 data lake using an MSK Connect plugin-connector pair.
 Custom Spark transformations were created on Databricks to clean and aggregate the data in the S3 data lake.
+
 Real-time (Stream) Processing:
 
 Streamed data in real-time using 3 AWS Kinesis data streams.
 Near real-time analysis was performed using Spark Structured Streaming on Databricks.
-Automation:
 
-Databricks workloads were automated to run daily using custom DAG scripts on MWAA (Managed Workflows for Apache Airflow).
+Automation: Databricks workloads were automated to run daily using custom DAG scripts on MWAA (Managed Workflows for Apache Airflow).
+
+Power BI querying of data: 
+
+Used a DirectImport method of connecting Databricks to PowerBI to create interactive dashboards and visualisations based off the queried cleaned Pinterest data. 
+
+
+## Business Questions Queried VIa Spark SQL in Kafka pipeline 
+
+In the Kafka Jupiter Notebook are the analytical business questions answered via SQL and are as follows (Note tasks 1-3 were cleaning process of the data):
+
+Task 4: Find the most popular Pinterest category people post to based on their country.
+
+Task 5: Find how many posts each category had between 2018 and 2022.
+
+Task 6: Find the user with the most followers in each country.
+
+Task 7: Find the most popular category for different age groups.
+
+Task 8: Find the median follower count for different age groups.
+
+Task 9: Find how many users have joined each year.
+
+Task 10: Find the median follower count of users based on their joining year.
+
+Task 11: Find the median follower count of users based on their joining year and age group
+
+
 
 ## What Did I Learn and What I Found Challenging 
 Key Learnings:
@@ -42,6 +70,7 @@ Key Learnings:
 Deepened my understanding of distributed computing with Kafka and Spark.
 Gained practical experience in working with various AWS services such as MSK, Kinesis, S3, Databricks, and MWAA.
 Learned how to architect scalable systems for both batch and real-time data processing.
+
 Challenges:
 
 Configuring MSK Connect with appropriate plugin-connector pairs for seamless data transfer to S3.
@@ -64,7 +93,7 @@ Set Up AWS Resources:
 
 Deploy the API Gateway, MSK, and Kinesis services using the provided CloudFormation template.
 
-Set up S3 buckets for the data lake.
+Set up S3 buckets for the data lake and mount S3 to the databricks as shown in the Jupiter Notebook.
 
 Configure MSK Connect:
 
